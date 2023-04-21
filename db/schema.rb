@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_102204) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_104342) do
+  create_table "bank_account_details", force: :cascade do |t|
+    t.string "account_no"
+    t.string "ifsc_code"
+    t.string "bank_name"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "bank_account_transactions", force: :cascade do |t|
     t.string "account_number"
     t.string "ifsc_code"
