@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipient_name: MyString
+  recipient_account_number: MyString
+  amount: MyString
+
+two:
+  recipient_name: MyString
+  recipient_account_number: MyString
+  amount: MyString
