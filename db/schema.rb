@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_090208) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_093727) do
+  create_table "bank_accounts", force: :cascade do |t|
+    t.string "account_number", null: false
+    t.string "ifsc_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
