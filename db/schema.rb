@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2023_04_21_115514) do
   create_table "bank_account_transactions", force: :cascade do |t|
     t.string "account_number"
@@ -29,6 +30,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_115514) do
     t.string "username"
     t.string "bank_name"
     t.boolean "in_debt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transfer_details", force: :cascade do |t|
+    t.string "recipient_name"
+    t.string "recipient_account_number"
+    t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transfers", force: :cascade do |t|
+    t.string "recipient_account_number"
+    t.string "recipient_name"
+    t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_details", force: :cascade do |t|
+    t.string "Full_name"
+    t.integer "Mobile_no"
+    t.string "Adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
