@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :user_loan_details
   resources :transfer_details
   resources :transfers
   resources :user_details
