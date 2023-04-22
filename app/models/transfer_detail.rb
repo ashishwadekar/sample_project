@@ -1,0 +1,2 @@
+class TransferDetail < ApplicationRecord
+end
