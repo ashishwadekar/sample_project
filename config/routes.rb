@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   # Hint: Defines the root path route ("/")
   # root "articles#index"
   resources :users
+  resources :balances
 end
