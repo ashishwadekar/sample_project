@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_104342) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_072531) do
+  create_table "balances", force: :cascade do |t|
+    t.string "account_number", null: false
+    t.decimal "account_balance", precision: 10, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "bank_account_details", force: :cascade do |t|
-    t.string "account_no"
-    t.string "ifsc_code"
-    t.string "bank_name"
-    t.string "user_name"
+    t.string "account_no", null: false
+    t.string "ifsc_code", null: false
+    t.string "bank_name", null: false
+    t.string "user_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,17 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104342) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "banks", force: :cascade do |t|
     t.string "acount_number"
     t.string "ifsc_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "debit_cards", force: :cascade do |t|
-    t.string "card_number"
-    t.string "card_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,17 +55,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104342) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "payments", force: :cascade do |t|
-    t.string "user_name"
-    t.string "password"
+  create_table "debit_cards", force: :cascade do |t|
+    t.string "card_number"
+    t.string "card_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_loan_details", force: :cascade do |t|
-    t.string "username"
-    t.string "bank_name"
-    t.boolean "in_debt"
+  create_table "payments", force: :cascade do |t|
+    t.string "user_name"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,6 +89,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104342) do
     t.string "Full_name"
     t.integer "Mobile_no"
     t.string "Adress"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_loan_details", force: :cascade do |t|
+    t.string "username"
+    t.string "bank_name"
+    t.boolean "in_debt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
