@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_104707) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_104628) do
   create_table "bank_account_transactions", force: :cascade do |t|
     t.string "account_number"
     t.string "ifsc_code"
@@ -25,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104707) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "credit_cards", force: :cascade do |t|
     t.string "card_holder_name"
     t.string "card_number"
@@ -33,17 +32,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104707) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "payments", force: :cascade do |t|
-    t.string "user_name"
-    t.string "password"
+  create_table "insurances", force: :cascade do |t|
+    t.string "insurance_name", null: false
+    t.string "insurance_duration", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_loan_details", force: :cascade do |t|
-    t.string "username"
-    t.string "bank_name"
-    t.boolean "in_debt"
+  create_table "payments", force: :cascade do |t|
+    t.string "user_name"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,6 +66,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_104707) do
     t.string "Full_name"
     t.integer "Mobile_no"
     t.string "Adress"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_loan_details", force: :cascade do |t|
+    t.string "username"
+    t.string "bank_name"
+    t.boolean "in_debt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
